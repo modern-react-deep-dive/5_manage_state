@@ -1,5 +1,9 @@
 import { Fragment } from "react";
-import UseStoreSelector from "./components/UseStoreSelector";
+import ContextCounter from "./components/ContextCounter";
+import ContextInput from "./components/ContextInput";
+import { CounterStoreProvider } from "./utils/providers/CounterStoreProvider";
+// import NewCounter from "./components/NewCounter";
+// import UseStoreSelector from "./components/UseStoreSelector";
 // import Counter from "./components/Counter";
 // import CounterWithStore from "./components/CounterWithStore";
 // import UseReducerWithUseState from "./components/UseReducerWithUseState";
@@ -18,7 +22,21 @@ function App() {
       {/* <UseReducerWithUseState /> */}
       {/* <Counter /> */}
       {/* <CounterWithStore /> */}
-      <UseStoreSelector />
+      {/* <UseStoreSelector /> */}
+      {/* <NewCounter /> */}
+
+      <ContextCounter />
+      <ContextInput />
+
+      <CounterStoreProvider initialState={{ count: 10, text: "hello1" }}>
+        <ContextCounter />
+        <ContextInput />
+
+        <CounterStoreProvider initialState={{ count: 20, text: "welcome" }}>
+          <ContextCounter />
+          <ContextInput />
+        </CounterStoreProvider>
+      </CounterStoreProvider>
     </Fragment>
   );
 }
