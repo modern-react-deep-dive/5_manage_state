@@ -7,7 +7,6 @@ export default function useStoreSelector<
   State extends unknown,
   Value extends unknown
 >(store: Store<State>, selector: (state: State) => Value) {
-  // const [state, setState] = useState(store.get());
   const [state, setState] = useState(() => selector(store.get()));
 
   useEffect(() => {
@@ -19,6 +18,5 @@ export default function useStoreSelector<
     return unsubscribe;
   }, [store, selector]);
 
-  // return selector(state);
   return state;
 }

@@ -29,7 +29,7 @@ export const createStore = <State extends unknown>(
   const set = (nextState: State | ((prev: State) => State)) => {
     state =
       typeof nextState === "function"
-        ? (nextState as (prev: State) => State)
+        ? (nextState as (prev: State) => State)(state)
         : nextState;
 
     callbacks.forEach((callback) => {
