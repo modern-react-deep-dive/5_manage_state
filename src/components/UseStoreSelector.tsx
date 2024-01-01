@@ -13,9 +13,9 @@ export default function UseStoreSelector() {
     <article className="w-screen h-screen text-center pt-40">
       <h1>카운터</h1>
       <Counter />
-      {/* <hr className="my-10" />
+      <hr className="my-10" />
       <h1>텍스트</h1>
-      <TextEditor /> */}
+      <TextEditor />
     </article>
   );
 }
